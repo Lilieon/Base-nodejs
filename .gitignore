@@ -1,0 +1,7 @@
+# Environment variable
+.env
+
+# Build folder
+built/
+
+node_modules/
