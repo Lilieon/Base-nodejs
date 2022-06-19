@@ -2,12 +2,11 @@
 
 import cors from "cors";
 import express from "express";
-import * as cacheManager from "./service/cacheManager.service";
 import {appUser} from "./route/user";
 import {appDatabase} from "./route/database";
 
 const app = express();
-cacheManager.initialize();
+
 
 app.use(
   cors({
