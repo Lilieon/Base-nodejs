@@ -5,7 +5,7 @@ Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 et ce projet adhère à [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Add cache manager method
+- Add another cache manager method
 
 ## [1.1.0] - 2022-06-19
 ### Added
