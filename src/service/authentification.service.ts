@@ -146,14 +146,14 @@ export const isAuthenticate = (req: any, res: any, next: any) => {
   if (authHeader && req.headers.authorization.split(" ")[0] === "Bearer") {
     const token = authHeader.split(" ")[1];
 
-    let user;
+    let userData;
     try {
-      user = jwt.verify(token, secretKey);
+      userData = jwt.verify(token, secretKey);
     } catch (err) {
       return res.sendStatus(403);
     }
 
-    req.user = user;
+    req.userData = userData;
     next();
   } else {
     res.sendStatus(401);

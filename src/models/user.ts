@@ -23,7 +23,7 @@ export async function getUser(email: string): Promise<User> {
 
 export async function addUser(user: User): Promise<boolean> {
   try {
-    await database.execute("CALL sp_poidsAffaire_add(?,?,?);",
+    await database.execute("CALL sp_user_add(?,?,?);",
       [
         user.name,
         user.email,
@@ -38,7 +38,7 @@ export async function addUser(user: User): Promise<boolean> {
 
 export async function updateUser(user: User): Promise<boolean> {
   try {
-    await database.execute("CALL sp_poidsAffaire_update(?,?,?,?);",
+    await database.execute("CALL sp_user_update(?,?,?,?);",
       [
         user.id,
         user.name,
@@ -54,7 +54,7 @@ export async function updateUser(user: User): Promise<boolean> {
 
 export async function deleteUser(idUser: number): Promise<boolean> {
   try {
-    await database.execute("CALL sp_poidsAffaire_delete(?);", [idUser]);
+    await database.execute("CALL sp_user_delete(?);", [idUser]);
     return true;
   } catch (error) {
     logger.error("Error deleting user", {databaseAction: "DELETE", error: error});
